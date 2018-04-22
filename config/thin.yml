@@ -1,0 +1,14 @@
+---
+chdir: "/Users/Yaroslav/Projects/GDT/faye-server"
+environment: production
+address: 0.0.0.0
+port: 8080
+timeout: 30
+log: "/Users/Yaroslav/Projects/GDT/faye-server/log/thin.log"
+pid: "/Users/Yaroslav/Projects/GDT/faye-server/tmp/pids/thin.pid"
+max_conns: 5000
+max_persistent_conns: 1024
+require: []
+wait: 30
+threadpool_size: 20
+daemonize: false
