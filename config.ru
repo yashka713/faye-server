@@ -2,19 +2,21 @@ require 'rubygems'
 require 'bundler'
 Bundler.require
 require 'faye'
-require 'faye/redis'
+require 'thin'
+require 'eventmachine'
 
-redis = Redis.new(host: 'localhost', port: 6379, driver: :hiredis)
+EventMachine.set_max_timers 10000000
+connected_clients = 0
 
 Faye::WebSocket.load_adapter('thin')
 bayeux = Faye::RackAdapter.new(
     mount: '/faye',
-    timeout: 100,
-    engine: {
-        type: Faye::Redis,
-        host: 'localhost',
-        port: 6379
-    }
+    timeout: 25
 )
+
+bayeux.on(:subscribe) do |client_id|
+  connected_clients += 1
+  puts "#{connected_clients}"
+end
 
 run bayeux

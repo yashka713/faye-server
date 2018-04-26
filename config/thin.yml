@@ -1,14 +1,12 @@
 ---
-chdir: "/Users/Yaroslav/Projects/GDT/faye-server"
+chdir: <%= Dir.pwd %>
 environment: production
 address: 0.0.0.0
-port: 8080
+port: 9292
 timeout: 30
-log: "/Users/Yaroslav/Projects/GDT/faye-server/log/thin.log"
-pid: "/Users/Yaroslav/Projects/GDT/faye-server/tmp/pids/thin.pid"
 max_conns: 5000
-max_persistent_conns: 1024
+max_persistent_conns: 3000
 require: []
-wait: 30
+wait: 20
 threadpool_size: 20
 daemonize: false

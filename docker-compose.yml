@@ -1,0 +1,8 @@
+version: '3'
+services:
+  faye:
+    build: .
+    command: thin start -C config/thin.yml
+    ports:
+    # HOST:CONTAINER
+      - '9292:9292'

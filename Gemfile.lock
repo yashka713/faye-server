@@ -36,7 +36,7 @@ GEM
     http_parser.rb (0.6.0)
     multi_json (1.13.1)
     public_suffix (3.0.2)
-    rack (2.0.4)
+    rack (2.0.5)
     redis (4.0.1)
     thin (1.7.2)
       daemons (~> 1.0, >= 1.0.9)
@@ -57,7 +57,7 @@ DEPENDENCIES
   thin
 
 RUBY VERSION
-   ruby 2.4.2p198
+   ruby 2.5.0p0
 
 BUNDLED WITH
    1.16.1
